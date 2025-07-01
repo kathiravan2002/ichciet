@@ -65,8 +65,8 @@ function Header() {
     ];
     return (
         <div className='flex justify-center'>
-            <div className={` fixed top-0 w-full  px-5 lg:px-5 xl:px-0 rounded-br-[10px] rounded-bl-[10px] z-50  duration-300 ${scroll ? 'bg-white shadow-lg  ':'  py-5 '} `}>
-                <div className='flex justify-between  items-center py-5 px-5  relative w-full max-w-[1400px] mx-auto'>
+            <div className={` fixed top-0 w-full   rounded-br-[10px] rounded-bl-[10px] z-50  duration-300 ${scroll ? 'bg-white shadow-lg  ':'  py-5 '} `}>
+                <div className='flex justify-between  items-center py-5 px-10 md:px-7 lg:px-7 xl:px-7 2xl:px-0  relative w-full max-w-[1400px] mx-auto'>
                     <Link to="/">
                         <div >
                             <img src="/images/ICHCIET.png" alt="logo" className="md:w-55 w-45" />

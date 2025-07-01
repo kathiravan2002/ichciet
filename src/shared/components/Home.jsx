@@ -49,10 +49,10 @@ function Home() {
 
     return (
         <div >
-            <div className="relative lg:h-screen bg-cover bg-center rounded-lg border-[12px]  border-[#2AA11F]" style={{ backgroundImage: "url('/images/herohome.jpg')" }}>
+            <div className="relative xl:h-screen 2xl:h-screen bg-cover bg-center rounded-lg border-[12px]  border-[#2AA11F]" style={{ backgroundImage: "url('/images/herohome.jpg')" }}>
 
                 <div className="absolute inset-0 bg-[#000000] opacity-80"></div>
-                <div className="flex 2xl:gap-15 gap-5 lg:flex-row flex-col-reverse justify-start items-center h-full max-w-[1400px] mx-auto mt-28  sm:mt-0 md:mt-0 lg:mt-15">
+                <div className="flex 2xl:gap-15 gap-5 lg:flex-row flex-col-reverse justify-start items-center h-full max-w-[1400px] mx-auto mt-28  sm:mt-0 md:mt-0 lg:mt-35 xl:mt-20 2xl:mt-15">
                     <div className="flex-[50] relative z-10  flex flex-col 2xl:space-y-8 xl:space-y-5 lg:space-y-5 space-y-5 justify-center max-w-[900px] px-5 md:px-10 lg:px-5 py-5 lg:mb-15 mb-15">
                         <div className="flex md:flex-row flex-row md:justify-between justify-between items-center gap-5 lg:gap-0 max-w-[500px]">
                             <div className="flex  gap-4 "><BsCalendar4Range className='text-[#2AA11F] flex shrink-0 text-[20px] md:text-[28px] mt-0.5' /> <h2 className="text-white namdhinggo-extrabold md:text-[24px] text-[18px]">Sep 28-30, 2025</h2></div>
