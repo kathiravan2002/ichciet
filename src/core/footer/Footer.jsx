@@ -8,13 +8,14 @@ const Footer = () => {
       <div className=" mx-auto px-5 max-w-[90rem]  lg:py-10 py-5 ">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4  md:gap-8 gap-8 mt-5 lg:mt-0 ">
           <div className='text-center md:text-left flex flex-col justify-center items-start'>
-            {/* <Link to='/'>
-
-              <img className='md:w-45 w-35' src="/images/ICHCIET.png" alt="logo" />
-            </Link> */}
-            <Link to="/" className="text-white text-4xl namdhinggo-extrabold">
-              ICHCIET
+            <Link to='/'>
+              <div className="bg-white px-2 py-2 rounded-lg">
+                <img className='md:w-45 w-35' src="/images/ICHCIET.png" alt="logo" />
+              </div>
             </Link>
+            {/* <Link to="/" className="text-white text-4xl namdhinggo-extrabold">
+              ICHCIET
+            </Link> */}
 
           </div>
           <div className='lg:mx-auto md:text-left text-start '>

@@ -68,13 +68,13 @@ function Header() {
             <div className={` fixed top-0 w-full  px-5 lg:px-5 xl:px-0 rounded-br-[10px] rounded-bl-[10px] z-50  duration-300 ${scroll ? 'bg-white shadow-lg  ':'  py-5 '} `}>
                 <div className='flex justify-between  items-center py-5 px-5  relative w-full max-w-[1400px] mx-auto'>
                     <Link to="/">
-                        <div className="">
-                            {/* <img src="/images/ICHCIET Logo.png" alt="logo" className="md:w-45 w-35" /> */}
-                            <p className="namdhinggo-extrabold text-4xl text-[#2AA11F]">ICHCIET</p>
+                        <div >
+                            <img src="/images/ICHCIET.png" alt="logo" className="md:w-55 w-45" />
+                            {/* <p className="namdhinggo-extrabold text-4xl text-[#2AA11F]">ICHCIET</p> */}
                         </div>
                     </Link>
                     <div className="hidden md:block ">
-                        <ul className="flex gap-10 poppins-medium text-xl  text-[#2AA11F]">
+                        <ul className="flex lg:gap-10 gap-5 poppins-medium lg:text-xl md:text-lg  text-[#2AA11F]">
                             <li className="">
                                 <Link to='/' className={` ${isActive == '/' ? 'text-[#2AA11F] ' : '  '}`}>Home</Link>
                             </li>
@@ -126,7 +126,7 @@ function Header() {
                         {" "}
 
                         < RiMenuFoldLine
-                            className={`${scroll ? " " : ""}   text-4xl  cursor-pointer duration-300  `}
+                            className={`${scroll ? " " : ""}   text-3xl  cursor-pointer duration-300  `}
                         />
 
                     </div>

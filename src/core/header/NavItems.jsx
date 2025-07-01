@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { FaChevronDown, FaUpload } from "react-icons/fa";
+import { ImCancelCircle } from "react-icons/im";
 
 
 const NavItems = ({ ToggleMenu, MenuOpen, isActive, }) => {
@@ -49,7 +50,7 @@ const NavItems = ({ ToggleMenu, MenuOpen, isActive, }) => {
         <div className="p-5">
 
           <div className="w-44  p-2"></div>
-          <div onClick={ToggleMenu} className="absolute right-5 top-5 cursor-pointer"><IoCloseCircleOutline className="text-2xl" /></div>
+          <div onClick={ToggleMenu} className="absolute right-5 top-5 cursor-pointer"><ImCancelCircle className="text-2xl" /></div>
 
           <ul className="flex flex-col items-start mt-5 *:my-2 *:px-2  overflow-y-auto max-h-[calc(100vh-150px)] ">
             <Link to="/" className={` ${isActive == '/' ? 'text-[#2AA11F] bg-white  rounded-lg min-w-[75px] py-1  px-2' : ' '}`}>
