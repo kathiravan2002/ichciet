@@ -20,22 +20,22 @@ const Footer = () => {
           </div>
           <div className='lg:mx-auto md:text-left text-start '>
             <h4 className="lg:text-xl poppins-bold mb-2 ">Quick Links</h4>
-            <ul className=' lg:text-base text-sm inter-regular space-y-2'>
+            <ul className=' lg:text-base text-sm inter-medium space-y-2'>
               <li><a href="/" className="hover:underline">Home</a></li>
-              <li><a className="hover:underline w-fit"> <Link to='/about'>About the Conference</Link></a></li>
-              <li><a className="hover:underline"><Link to='/scope'>Scope</Link> </a></li>
-              <li><a className="hover:underline"><Link to='/organizing-committee'>Organization Committee</Link></a></li>
-              <li><a className="hover:underline"><Link to='/editorial-board'>Editorial Board</Link> </a></li>
+              <li><a className=" w-fit"> <Link to='/about'>About the Conference</Link></a></li>
+              <li><a className=""><Link to='/scope'>Scope</Link> </a></li>
+              <li><a className=""><Link to='/organizing-committee'>Organization Committee</Link></a></li>
+              <li><a className=""><Link to='/editorial-board'>Editorial Board</Link> </a></li>
             </ul>
           </div>
           <div className='lg:ml-auto  md:text-left text-start  '>
             <div className='flex gap-4 flex-wrap justify-start items-end '>
               <div className=''>
                 <h4 className="lg:text-xl poppins-bold mb-2 ">Registration Guide</h4>
-                <ul className="lg:text-base text-sm inter-regular space-y-2">
-                  <li><a className="hover:underline"><Link to='/key-dates'>Key Dates</Link> </a></li>
-                  <li><a className="hover:underline"><Link to='/conference-tracks'>Conference Tracks</Link></a></li>
-                  <li><a className="hover:underline"><Link to='/paper-submission'>Paper submission </Link>  </a></li>
+                <ul className="lg:text-base text-sm inter-medium space-y-2">
+                  <li><a className=""><Link to='/key-dates'>Key Dates</Link> </a></li>
+                  <li><a className=""><Link to='/conference-tracks'>Conference Tracks</Link></a></li>
+                  <li><a className=""><Link to='/paper-submission'>Paper submission </Link>  </a></li>
                 </ul>
               </div>
             </div>
@@ -45,9 +45,9 @@ const Footer = () => {
               <div className=''>
                 <h4 className="lg:text-xl poppins-bold mb-2 ">Contact Info</h4>
                 <ul className="lg:text-base text-sm space-y-2">
-                  <li><a className="hover:underline inter-regular"><Link to=''>Beijing, China</Link></a></li>
-                  <li><a className="hover:underline inter-regular"><Link to=''>ichciet.conference@gmail.com</Link></a></li>
-                  <li><a className="hover:underline inter-regular"><Link to=''>+91 8870212121</Link></a></li>
+                  <li><a className=" inter-medium"><Link to=''>Beijing, China</Link></a></li>
+                  <li><a className=" inter-medium"><Link to=''>ichciet.conference@gmail.com</Link></a></li>
+                  <li><a className=" inter-medium"><Link to=''>+91 8870212121</Link></a></li>
                 </ul>
               </div>
             </div>

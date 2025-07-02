@@ -69,12 +69,11 @@ function Header() {
                 <div className='flex justify-between  items-center py-5 px-10 md:px-7 lg:px-7 xl:px-7 2xl:px-0  relative w-full max-w-[1400px] mx-auto'>
                     <Link to="/">
                         <div >
-                            <img src="/images/ICHCIET.png" alt="logo" className="md:w-55 w-45" />
-                            {/* <p className="namdhinggo-extrabold text-4xl text-[#2AA11F]">ICHCIET</p> */}
+                            <img src={scroll ? "/images/ICHCIET.png" : "/images/ICHCIET (1).png"} alt="logo" className="md:w-55 w-45" />
                         </div>
                     </Link>
                     <div className="hidden md:block ">
-                        <ul className="flex lg:gap-10 gap-5 poppins-medium lg:text-xl md:text-lg  text-[#2AA11F]">
+                        <ul className={`flex lg:gap-10 gap-5 poppins-medium lg:text-[20px] md:text-lg  text-[#2AA11F] ${scroll ? '  ':'  text-white '} `}>
                             <li className="">
                                 <Link to='/' className={` ${isActive == '/' ? 'text-[#2AA11F] ' : '  '}`}>Home</Link>
                             </li>
@@ -82,14 +81,14 @@ function Header() {
                                 About Us
                                 <FaChevronDown className={`${dropdown1 ? 'rotate-180' : 'rotate-0'} duration-200 text-xs `} /> </Link>
                                 {dropdown1 &&
-                                    <div className={`absolute  border border-[#2AA11F] mt-2 rounded-lg  ${scroll ? ' bg-white' : 'bg-[#FFFFFF] opacity-100'}`}>
+                                    <div className={`absolute  border border-[#2AA11F] mt-2 rounded-lg  ${scroll ? ' bg-white ' : 'bg-[#FFFFFF] text-[#2AA11F] opacity-100'}`}>
                                         <ul className="p-2 text-[16px] max-w-none w-full whitespace-nowrap ">
                                             {about.map((link, index) => {
                                                 const isActive = location.pathname === link.path;
 
                                                 return (
                                                     <Link key={index} onClick={() => setDropdown1(!dropdown1)} to={link.path} className="!w-full" >
-                                                        <li className={`px-4 py-1.5 rounded-md transition cursor-pointer ${isActive ? 'text-[#2AA11F]  ' : ''}`} >{link.name} </li>
+                                                        <li className={`px-4 py-1.5 rounded-md transition cursor-pointer ${isActive ? 'bg-[#2AA11F]  text-white ' : ''}`} >{link.name} </li>
                                                     </Link>
                                                 );
                                             })}
@@ -98,13 +97,13 @@ function Header() {
                             </li>
                             <li ref={dropdown2Ref} className="cursor-pointer relative"><Link onClick={() => setDropdown2(!dropdown2)} className={`flex items-center gap-1  ${author.some(link => location.pathname === link.path) ? 'text-[#2AA11F]' : '   '}`}>Author’s Desk<FaChevronDown className={`${dropdown2 ? 'rotate-180' : 'rotate-0'} duration-200 text-xs `} /> </Link>
                                 {dropdown2 &&
-                                    <div className={`absolute  border border-[#2AA11F] mt-2  rounded-lg    ${scroll ? ' bg-white' : 'bg-[#FFFFFF] opacity-100'}`}>
+                                    <div className={`absolute  border border-[#2AA11F] mt-2  rounded-lg    ${scroll ? ' bg-white' : 'bg-[#FFFFFF] text-[#2AA11F] opacity-100'}`}>
                                         <ul className="p-2 text-[16px] max-w-none w-full whitespace-nowrap ">
                                             {author.map((link, index) => {
                                                 const isActive = location.pathname === link.path;
                                                 return (
                                                     <Link key={index} onClick={() => setDropdown2(!dropdown2)} to={link.path} className="!w-full" >
-                                                        <li className={`px-4 py-1.5 rounded-md transition cursor-pointer ${isActive ? 'text-[#2AA11F]  ' : ''}`} >{link.name} </li>
+                                                        <li className={`px-4 py-1.5 rounded-md transition cursor-pointer ${isActive ? 'bg-[#2AA11F]  text-white  ' : ''}`} >{link.name} </li>
                                                     </Link>
                                                 )
                                             })}

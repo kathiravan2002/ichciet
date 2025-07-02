@@ -94,22 +94,16 @@ function Editorial() {
             <div className="max-w-[1400px] mx-auto px-4 2xl:px-0 mt-10 overflow-hidden">
                 <div className="   ">
                     <h2 className="2xl:text-[32px] xl:text-[28px] lg:text-[28px] text-[28px] namdhinggo-extrabold text-[#2AA11F] text-center  ">Editorial Board Roles and Responsibilities</h2>
-                    <div className="space-y-10 px-4 mt-10">
+                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 mt-10 h-full mb-10">
                         {Scope.map((item, index) => {
-                            const isEven = index % 2 === 0;
-                            const aosAnimation = isEven ? 'fade-right' : 'fade-left';
-
+                          
                             return (
-                                <div
-                                    key={index}
-                                    className={`flex ${isEven ? 'justify-start' : 'justify-end'}`}
-                                    data-aos={aosAnimation}
-                                >
-                                    <div className="shadow-[0_0_5px_rgba(0,0,0,0.15)] rounded-[15px] py-6 px-4 max-w-3xl bg-[#E2EFE1]">
-                                        <h2 className="lg:text-[24px] text-[20px] namdhinggo-extrabold text-[#2AA11F]">
+                                <div key={index}  className="">
+                                    <div className=" rounded-[15px]  h-full  bg-[#f0f5f0] shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                                        <h2 className="lg:text-[24px] text-[20px] namdhinggo-extrabold text-white bg-[#2AA11F] rounded-t-[15px] py-2 text-center">
                                             {item.topic}
                                         </h2>
-                                        <div className="flex gap-3 mt-2 text-justify">
+                                        <div className="flex gap-3 mt-2 text-justify py-2 px-4">
                                             <img
                                                 src="/images/Pain Point.png"
                                                 alt="img"
@@ -158,9 +152,7 @@ function Editorial() {
 
                 <div className="lg:mt-15 mt-10 flex items-center relative ">
                     <div className="max-w-[400px] hidden lg:block"><img src="/images/register.jpg" alt="registerpage" className=" rounded-[15px] border-6 border-[#2AA11F]" /></div>
-                    <div className=" relative lg:right-22 "  >
-                        <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5 ">
-                            <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
+                    <div className=" relative lg:right-22 "  >                            <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5  py-5">                                    <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
                             <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
                             <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
                                 <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Beijing, China</p></div>

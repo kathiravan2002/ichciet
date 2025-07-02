@@ -49,11 +49,11 @@ function Home() {
 
     return (
         <div >
-            <div className="relative xl:h-screen 2xl:h-screen bg-cover bg-center rounded-lg border-[12px]  border-[#2AA11F]" style={{ backgroundImage: "url('/images/herohome.jpg')" }}>
+            <div className="relative  2xl:h-screen bg-cover bg-center " style={{ backgroundImage: "url('/images/herohome.jpg')" }}>
 
                 <div className="absolute inset-0 bg-[#000000] opacity-80"></div>
-                <div className="flex 2xl:gap-15 gap-5 lg:flex-row flex-col-reverse justify-start items-center h-full max-w-[1400px] mx-auto mt-28  sm:mt-0 md:mt-0 lg:mt-35 xl:mt-20 2xl:mt-15">
-                    <div className="flex-[50] relative z-10  flex flex-col 2xl:space-y-8 xl:space-y-5 lg:space-y-5 space-y-5 justify-center max-w-[900px] px-5 md:px-10 lg:px-5 py-5 lg:mb-15 mb-15">
+                <div className="flex 2xl:gap-15 gap-5 lg:flex-row flex-col-reverse justify-start items-center h-full max-w-[1400px] mx-auto py-20 2xl:pt-20 xl:pt-35 lg:pt-35 md:pt-40 pt-35 ">
+                    <div className="flex-[50] relative z-10  flex flex-col 2xl:space-y-8 xl:space-y-5 lg:space-y-5 space-y-5 justify-center  max-w-[900px] px-5 md:px-10 lg:px-5   ">
                         <div className="flex md:flex-row flex-row md:justify-between justify-between items-center gap-5 lg:gap-0 max-w-[500px]">
                             <div className="flex  gap-4 "><BsCalendar4Range className='text-[#2AA11F] flex shrink-0 text-[20px] md:text-[28px] mt-0.5' /> <h2 className="text-white namdhinggo-extrabold md:text-[24px] text-[18px]">Sep 28-30, 2025</h2></div>
                             <div className="flex  gap-3 "><IoLocationSharp className='text-[#2AA11F] flex shrink-0 text-[20px] md:text-[28px] mt-0.5' /> <h2 className="text-white namdhinggo-extrabold md:text-[24px] text-[18px]">Beijing, China</h2></div>
@@ -83,7 +83,7 @@ function Home() {
                         </div>
                     </div>
 
-                    <div className="relative max-w-[565px] px-4 lg:mt-0 sm:mt-38 mt-5 ">
+                    <div className="relative max-w-[565px] px-4  ">
                         <img src="/images/herohome3.png" alt="img" className="" />
                     </div>
                 </div>
@@ -194,9 +194,7 @@ function Home() {
 
                 <div className="lg:mt-15 mt-10 flex items-center relative ">
                     <div className="max-w-[400px] hidden lg:block"><img src="/images/register.jpg" alt="registerpage" className=" rounded-[15px] border-6 border-[#2AA11F]" /></div>
-                    <div className=" relative lg:right-22 "  >
-                        <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5 ">
-                            <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
+                    <div className=" relative lg:right-22 "  >                            <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5  py-5">                                    <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
                             <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
                             <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
                                 <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Beijing, China</p></div>
@@ -213,6 +211,28 @@ function Home() {
                         </div>
                     </div>
                 </div>
+                
+                {/* <div className="lg:mt-15 mt-10 flex items-center relative ">
+                    <div className="max-w-[400px] hidden lg:block"><img src="/images/register.jpg" alt="registerpage" className=" rounded-[15px] border-6 border-[#2AA11F]" /></div>
+                    <div className=" relative lg:right-22 "  >
+                        <div className=" bg-white border-6 border-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5 ">
+                            <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-[#2AA11F]">Ready to Join the Innovation ?</p>
+                            <p className="inter-medium text-[16px] text-text-[#2AA11F] text-justify md:text-center max-w-[1000px] mx-auto text-[#2AA11F]">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
+                            <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
+                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-[#2AA11F]' /><p className="namdhinggo-extrabold text-[20px] text-[#2AA11F]">Beijing, China</p></div>
+                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-[#2AA11F] ' /><p className="namdhinggo-extrabold text-[20px] text-[#2AA11F]">28th to 30th Sep, 2025</p></div>
+                                <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-[#2AA11F] ' /><p className="namdhinggo-extrabold text-[20px] text-[#2AA11F]">9:00 AM – 5:00 PM</p></div>
+                            </div>
+                            <Link to="/paper-submission">
+                                <div className="namdhinggo-extrabold lg:text-[24px] text-[18px] flex   justify-center ">
+                                    <button className="cursor-pointer flex items-center gap-4 px-4   bg-[#2AA11F] text-white   lg:py-1 py-2  rounded-lg transition-all duration-300 ">
+                                        Register Now <FaArrowRightLong className=" mt-0.5 text-[25px]" />
+                                    </button>
+                                </div>
+                            </Link>
+                        </div>
+                    </div>
+                </div> */}
             </div>
 
 
