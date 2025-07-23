@@ -8,7 +8,7 @@ import { FaCalendar, FaHandPointRight } from 'react-icons/fa';
 import { BsFillClockFill } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import { FaArrowRightLong } from 'react-icons/fa6';
-import {  FileText,  Mail, Building,  Phone } from 'lucide-react';
+import { FileText, Mail, Building, Phone } from 'lucide-react';
 
 
 function Contactus() {
@@ -88,7 +88,7 @@ function Contactus() {
                 </div>
             </div>
             <div className=" px-4 max-w-[1400px] mx-auto lg:mt-15 mt-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" >
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-[50rem] mx-auto" >
                     <div className="flex gap-5 px-4 py-5 bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] rounded-[25px]">
                         <div className="  flex justify-center items-center">
                             <IoLocationSharp className="text-[#2AA11F] text-[45px]" />
@@ -97,12 +97,12 @@ function Contactus() {
                             <h2 className="text-[#2AA11F] namdhinggo-extrabold lg:text-2xl text-xl">Location</h2>
                             <a href="" >
                                 <p className="inter-medium text-base  opacity-85">
-                                    Beijing, China
+                                    Riyadh, Saudi Arabia
                                 </p>
                             </a>
                         </div>
                     </div>
-                    <div className="flex gap-5 px-4 py-5 bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] rounded-[25px]">
+                    {/* <div className="flex gap-5 px-4 py-5 bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] rounded-[25px]">
                         <div className="flex justify-center items-center">
                             <FiPhoneCall className="text-[#2AA11F] text-[45px]" />
                         </div>
@@ -114,7 +114,7 @@ function Contactus() {
                                 </p>
                             </Link>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="flex gap-5 px-4 py-5 bg-white shadow-[0_0_10px_rgba(0,0,0,0.15)] rounded-[25px] ">
                         <div className=" flex justify-center items-center">
                             <MdEmail className="text-[#2AA11F] text-[45px]" />
@@ -131,7 +131,7 @@ function Contactus() {
                 </div>
             </div>
             {/* <div className="flex lg:flex-row flex-col-reverse max-w-[1400px] mx-auto px-4 2xl:px-0  mt-10">
-               
+
                 <div className=" flex-50   ">
                     <div className='bg-[#2AA11F]  lg:rounded-tr-[25px] lg:rounded-br-[25px] rounded-tr-[25px] rounded-br-[0px] lg:rounded-tl-[0px] lg:rounded-bl-[0px]  rounded-tl-[25px] rounded-bl-[0px]'>
 
@@ -261,7 +261,7 @@ function Contactus() {
                                 <div className="space-y-2">
                                     <label className="block text-sm poppins-semibold text-gray-700">Phone number</label>
                                     <div className="relative">
-                                        <Phone  className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#2AA11F] w-5 h-5" />
+                                        <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[#2AA11F] w-5 h-5" />
                                         <input
                                             type="tel"
                                             name="number"
@@ -292,33 +292,33 @@ function Contactus() {
                                 </div>
                             </div>
 
-                            
+
 
                             {/* File Upload */}
-                          
+
                             <div className="space-y-2 ">
                                 <label className="block text-sm poppins-semibold text-gray-700">Enter Message</label>
                                 <div className="relative ">
-                                    <textarea 
-                                    className="border-2  border-dashed border-[#2AA11F] poppins-medium rounded-2xl p-8  w-full  hover:border-[#2AA11F]  focus:outline-none transition-all duration-300 bg-gray-50  group cursor-pointer"
-                                       
+                                    <textarea
+                                        className="border-2  border-dashed border-[#2AA11F] poppins-medium rounded-2xl p-8  w-full  hover:border-[#2AA11F]  focus:outline-none transition-all duration-300 bg-gray-50  group cursor-pointer"
+
                                         name="message"
                                         placeholder="Enter Your Message"
                                         rows="6"
-                                       
+
                                         value={formData.message}
                                         onChange={handleFileInputChange}
                                         required
                                     />
-                                   
-                               
-                            </div>
+
+
+                                </div>
                             </div>
 
                             {/* Submit Button */}
                             <div className="namdhinggo-extrabold text-[20px] flex justify-center items-center col-span-1 sm:col-span-2 md:col-span-2">
                                 <button className="cursor-pointer text-white px-4 bg-[#2AA11F] p-2 rounded-lg  ">
-                                   {status === 'Sending...' ? 'Submitting...' : 'Send Message'}
+                                    {status === 'Sending...' ? 'Submitting...' : 'Send Message'}
 
                                 </button>
                             </div>
@@ -333,20 +333,20 @@ function Contactus() {
                 <div className="lg:mt-15 mt-10 flex items-center relative ">
                     <div className="max-w-[400px] hidden lg:block"><img src="/images/register.jpg" alt="registerpage" className=" rounded-[15px] border-6 border-[#2AA11F]" /></div>
                     <div className=" relative lg:right-22 "  >                            <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5  py-5">                                    <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
-                            <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
-                            <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
-                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Beijing, China</p></div>
-                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">28th to 30th Sep, 2025</p></div>
-                                <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">9:00 AM – 5:00 PM</p></div>
-                            </div>
-                            <Link to="/paper-submission">
-                                <div className="namdhinggo-extrabold lg:text-[24px] text-[18px] flex   justify-center ">
-                                    <button className="cursor-pointer flex items-center gap-4 px-4   bg-white text-[#2AA11F]   lg:py-1 py-2  rounded-lg transition-all duration-300 ">
-                                        Register Now <FaArrowRightLong className=" mt-0.5 text-[25px]" />
-                                    </button>
-                                </div>
-                            </Link>
+                        <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
+                        <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
+                            <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Riyadh, Saudi Arabia</p></div>
+                            <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">September 29, 2025</p></div>
+                            <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">9:00 AM – 5:00 PM</p></div>
                         </div>
+                        <Link to="/paper-submission">
+                            <div className="namdhinggo-extrabold lg:text-[24px] text-[18px] flex   justify-center ">
+                                <button className="cursor-pointer flex items-center gap-4 px-4   bg-white text-[#2AA11F]   lg:py-1 py-2  rounded-lg transition-all duration-300 ">
+                                    Register Now <FaArrowRightLong className=" mt-0.5 text-[25px]" />
+                                </button>
+                            </div>
+                        </Link>
+                    </div>
                     </div>
                 </div>
             </div>

@@ -34,7 +34,7 @@ function Organizing() {
             topic: "Registration and Guest Services",
             content: "Oversees the registration process, attendee communication, and on-site hospitality. Ensures efficient delegate onboarding, badge distribution, help desk support, and a welcoming experience for all local and international participants.",
         },
-       
+
 
     ]
 
@@ -61,7 +61,7 @@ function Organizing() {
             qualification: "M.E., Ph.D.,",
             location: "Chennai"
         },
-       
+
 
 
     ]
@@ -96,7 +96,7 @@ function Organizing() {
                     <h2 className="2xl:text-[32px] xl:text-[28px] lg:text-[28px] text-[28px] namdhinggo-extrabold text-[#2AA11F] text-center  ">Organizing Committee Roles And Responsibilities</h2>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 mt-10 h-full mb-10">
                         {organize.map((item, index) => {
-                          
+
                             return (
                                 <div key={index}  className="">
                                     <div className=" rounded-[15px]  h-full  bg-[#f0f5f0] shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
@@ -124,7 +124,7 @@ function Organizing() {
             </div>
 
 
-            <div className=" mt-15">
+            {/* <div className=" mt-15">
                 <div className="bg-[#E2EFE1]" >
                     <h2 className="2xl:text-[32px] xl:text-[28px] lg:text-[28px] text-[28px] namdhinggo-extrabold text-[#2AA11F] text-center pt-10">Meet the team behind ICHCIET 2025</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-10 xl:gap-10 lg:gap-10 gap-5 lg:mt-7 mt-5 place-items-center max-w-[1400px] mx-auto ">
@@ -144,7 +144,7 @@ function Organizing() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             <div className="pb-15  max-w-[1400px] mx-auto mt-15 px-4 2xl:px-0">
                 <h2 className="2xl:text-[32px] xl:text-[28px] lg:text-[28px] text-[28px] namdhinggo-extrabold text-[#2AA11F] text-center">Join Us at ICHCIET 2025</h2>
@@ -155,8 +155,8 @@ function Organizing() {
                     <div className=" relative lg:right-22 "  >                            <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5  py-5">                                    <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
                             <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
                             <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
-                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Beijing, China</p></div>
-                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">28th to 30th Sep, 2025</p></div>
+                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Riyadh, Saudi Arabia</p></div>
+                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">September 29, 2025</p></div>
                                 <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">9:00 AM – 5:00 PM</p></div>
                             </div>
                             <Link to="/paper-submission">

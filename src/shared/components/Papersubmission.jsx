@@ -186,7 +186,7 @@ function Papersubmission() {
                     <p className=" text-[16px] leading-[30px] text-justify inter-regular opacity-85">The International Conference on Advanced Business and Digital Transformation invites original research papers, case studies, and innovative insights that align with the conference’s core themes. Authors are encouraged to submit high-quality, unpublished work that contributes to the advancement of business strategies and digital transformation. All submissions will undergo a rigorous peer-review process to ensure academic integrity and relevance. Accepted papers will be published in the conference proceedings and considered for journal publication. We look forward to your valuable contributions.</p>
                 </div>
             </div>
-           
+
             <div className="grid grid-cols-1  gap-8 max-w-[1000px] mx-auto lg:mt-15 mt-10 ">
 
 
@@ -198,7 +198,7 @@ function Papersubmission() {
                             <h2 className="text-3xl poppins-bold mb-2">Submit Your Paper</h2>
                             <p className="text-indigo-100 poppins-medium ">Fill out the form below to submit your research paper</p>
                         </div>
-                        
+
                         <form onSubmit={handleSubmit}  >
                             <div className="p-8 space-y-6">
                                 {/* Paper Title */}
@@ -341,8 +341,8 @@ function Papersubmission() {
                     <div className=" relative lg:right-22 "  >                            <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5  py-5">                                    <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
                             <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
                             <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
-                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Beijing, China</p></div>
-                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">28th to 30th Sep, 2025</p></div>
+                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Riyadh, Saudi Arabia</p></div>
+                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">September 29, 2025</p></div>
                                 <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">9:00 AM – 5:00 PM</p></div>
                             </div>
                             <Link to="/paper-submission">
