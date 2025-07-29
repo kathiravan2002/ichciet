@@ -46,7 +46,7 @@ const Footer = () => {
                 <h4 className="lg:text-xl poppins-bold mb-2 ">Contact Info</h4>
                 <ul className="lg:text-base text-sm space-y-2">
                   <li><a className=" inter-medium"><Link to=''>Riyadh, Saudi Arabia</Link></a></li>
-                  <li><a className=" inter-medium"><Link to=''>ichciet.conference@gmail.com</Link></a></li>
+                  <li><a className=" inter-medium"><Link to=''>info.ichciet@gmail.com</Link></a></li>
                   {/* <li><a className=" inter-medium"><Link to=''>+91 8870212121</Link></a></li> */}
                 </ul>
               </div>

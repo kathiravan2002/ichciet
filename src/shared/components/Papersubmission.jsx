@@ -61,8 +61,16 @@ function Papersubmission() {
         e.preventDefault();
         setStatus('Sending...');
 
+        const journalName = 'ichciet';
+        // Generate unique ID: journalName + YYYYMMDD + HHMMSS
+        const now = new Date();
+        const dateStr = now.toISOString().slice(0, 10).replace(/-/g, ''); // YYYYMMDD
+        const timeStr = now.toTimeString().slice(0, 8).replace(/:/g, ''); // HHMMSS
+        const uniqueId = `${journalName}_${dateStr}_${timeStr}`;
+
         try {
             const formDataToSend = new FormData();
+            formDataToSend.append('Submission_ID', uniqueId);
             formDataToSend.append('Paper_Title', formData.Paper_Title);
             formDataToSend.append('Author_FUll_Name', formData.Author_FUll_Name);
             formDataToSend.append('Email_Address', formData.Email_Address);
@@ -73,14 +81,40 @@ function Papersubmission() {
                 formDataToSend.append('Paper_File', formData.Paper_File);
             }
 
-            const response = await fetch('http://192.168.29.71/ichciet/mail.php', {
+            const googleSheetsParams = new URLSearchParams();
+            googleSheetsParams.append('Submission_ID', uniqueId);
+            googleSheetsParams.append('journal_name', journalName);
+            googleSheetsParams.append('Paper_Title', formData.Paper_Title);
+            googleSheetsParams.append('Author_FUll_Name', formData.Author_FUll_Name);
+            googleSheetsParams.append('Email_Address', formData.Email_Address);
+            googleSheetsParams.append('Institution_Name', formData.Institution_Name);
+            googleSheetsParams.append('Paper_Track', formData.Paper_Track);
+
+            const mailPromise = fetch('https://ichciet.com/api/mail.php', {
                 method: 'POST',
                 body: formDataToSend,
             });
 
-            if (response.ok) {
-                const result = await response.text();
-                setStatus(result);
+            const sheetsPromise = fetch('https://script.google.com/macros/s/AKfycbwZ_TtKUqAfcue9TNCKy57hTrCKDUP5dTQnWbpSxBDzlRMllEuOoaxzRDl0kQPah5pZ/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: googleSheetsParams.toString(),
+            });
+
+            const [mailResponse, sheetsResponse] = await Promise.allSettled([mailPromise, sheetsPromise]);
+
+            const mailSuccess = mailResponse.status === 'fulfilled' && mailResponse.value.ok;
+            const sheetsSuccess = sheetsResponse.status === 'fulfilled';
+
+            if (sheetsResponse.status === 'rejected') {
+                console.error('Sheets request failed:', sheetsResponse.reason);
+            }
+
+            if (mailSuccess && sheetsSuccess) {
+                setStatus(`Submission successful! Data sent to both email and Google Sheets (${journalName}). Submission ID: ${uniqueId}`);
                 setFormData({
                     Paper_Title: '',
                     Author_FUll_Name: '',
@@ -89,18 +123,34 @@ function Papersubmission() {
                     Paper_Track: '',
                     Paper_File: null,
                 });
-                // document.getElementById('Paper_File').value = '';
-                toast.success("Paper submitted successfully!");
+                setFileName('');
+                const fileInput = document.getElementById('Paper_File');
+                if (fileInput) {
+                    fileInput.value = '';
+                } else {
+                    console.error('Element with ID "Paper_File" not found.');
+                }
+                toast.success(`Paper submitted successfully!`);
+
+            } else if (mailSuccess && !sheetsSuccess) {
+                setStatus('Email sent successfully, but there might be an issue with Google Sheets.');
+                toast.warning('Email sent successfully. Please check if data was saved to Google Sheets.');
+
+            } else if (!mailSuccess && sheetsSuccess) {
+                setStatus('Data likely saved to Google Sheets, but failed to send email.');
+                toast.warning('Data might be saved to Google Sheets, but failed to send email.');
+
             } else {
-                setStatus('Failed to send submission. Please try again.');
-                toast.error('Failed to send submission. Please try again.');
+                setStatus('There might be issues with the submission. Please check manually.');
+                toast.error('Submission completed, but please verify the results manually.');
             }
+
         } catch (error) {
             console.error('Error:', error);
-            setStatus('An error occurred. Please try again.');
+            setStatus('An error occurred during submission. Please try again.');
             toast.error('An error occurred. Please try again.');
         }
-    };
+    }
 
     const submissionGuidelines = [
         {
@@ -282,12 +332,12 @@ function Papersubmission() {
                                         onChange={handleFileInputChange}
                                     >
                                         <option value="">Select Your Category</option>
-                                        <option value="AI">Artificial Intelligence</option>
+                                        <option value="Artificial Intelligence">Artificial Intelligence</option>
                                         <option value="Machine Learning">Machine Learning</option>
                                         <option value="Data Science">Data Science</option>
-                                        <option value="HCI">Human-Computer Interaction</option>
-                                        <option value="Security">Cybersecurity</option>
-                                        <option value="IoT">Internet of Things</option>
+                                        <option value="Human-Computer Interaction">Human-Computer Interaction</option>
+                                        <option value="Cybersecurit">Cybersecurity</option>
+                                        <option value="Internet of Things">Internet of Things</option>
                                     </select>
                                 </div>
 
@@ -297,6 +347,7 @@ function Papersubmission() {
                                     <div className="relative">
                                         <div className="border-2 border-dashed border-[#2AA11F] rounded-2xl p-8 text-center hover:border-[#2AA11F]  focus:outline-none transition-all duration-300 bg-gray-50 hover:bg-[#e8ffe6] group cursor-pointer">
                                             <input
+                                                id='Paper_File'
                                                 name="Paper_File"
                                                 accept=".pdf,.doc,.docx"
                                                 type="file"
@@ -304,8 +355,8 @@ function Papersubmission() {
                                                 className="absolute inset-0 opacity-0 cursor-pointer"
                                             />
                                             <div className="space-y-4">
-                                                <div className="w-16 h-16 mx-auto bg-[#2AA11F] rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                                                    <Upload className="w-8 h-8 text-white" />
+                                                <div className='flex justify-center items-center'>
+                                                    <Upload className="w-8 h-8 text-[#2AA11F] " />
                                                 </div>
                                                 <div>
                                                     <p className="text-lg poppins-semibold text-gray-700 mb-2">
@@ -339,20 +390,20 @@ function Papersubmission() {
                 <div className="lg:mt-15 mt-10 flex items-center relative ">
                     <div className="max-w-[400px] hidden lg:block"><img src="/images/register.jpg" alt="registerpage" className=" rounded-[15px] border-6 border-[#2AA11F]" /></div>
                     <div className=" relative lg:right-22 "  >                            <div className=" bg-[#2AA11F] rounded-[15px] text-center space-y-5 px-6 p-5  py-5">                                    <p className="namdhinggo-extrabold 2xl:text-[32px] xl:text-[28px] lg:text-[24px] text-[20px] text-white">Ready to Join the Innovation ?</p>
-                            <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
-                            <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
-                                <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Riyadh, Saudi Arabia</p></div>
-                                <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">September 29, 2025</p></div>
-                                <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">9:00 AM – 5:00 PM</p></div>
-                            </div>
-                            <Link to="/paper-submission">
-                                <div className="namdhinggo-extrabold lg:text-[24px] text-[18px] flex   justify-center ">
-                                    <button className="cursor-pointer flex items-center gap-4 px-4   bg-white text-[#2AA11F]   lg:py-1 py-2  rounded-lg transition-all duration-300 ">
-                                        Register Now <FaArrowRightLong className=" mt-0.5 text-[25px]" />
-                                    </button>
-                                </div>
-                            </Link>
+                        <p className="inter-medium text-[16px] text-white text-justify md:text-center max-w-[1000px] mx-auto">Register now and secure your spot today to connect with global experts, explore emerging technologies, and be part of shaping the future of computer science.</p>
+                        <div className="flex lg:flex-row flex-col lg:gap-10 gap-0 space-y-5  justify-center items-start sm:items-center lg:items-start">
+                            <div className="flex gap-3"><IoLocationSharp className='text-[26px] text-white' /><p className="namdhinggo-extrabold text-[20px] text-white">Riyadh, Saudi Arabia</p></div>
+                            <div className="flex gap-3"><FaCalendar className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">September 29, 2025</p></div>
+                            <div className="flex gap-3"><BsFillClockFill className='text-[24px] text-white ' /><p className="namdhinggo-extrabold text-[20px] text-white">9:00 AM – 5:00 PM</p></div>
                         </div>
+                        <Link to="/paper-submission">
+                            <div className="namdhinggo-extrabold lg:text-[24px] text-[18px] flex   justify-center ">
+                                <button className="cursor-pointer flex items-center gap-4 px-4   bg-white text-[#2AA11F]   lg:py-1 py-2  rounded-lg transition-all duration-300 ">
+                                    Register Now <FaArrowRightLong className=" mt-0.5 text-[25px]" />
+                                </button>
+                            </div>
+                        </Link>
+                    </div>
                     </div>
                 </div>
             </div>

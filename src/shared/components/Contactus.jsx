@@ -37,7 +37,7 @@ function Contactus() {
                 formDataToSend.append(key, value);
             });
 
-            const response = await fetch('http://192.168.29.71/ichciet/contactus.php', {
+            const response = await fetch('https://ichciet.com/api/contactus.php', {
                 method: 'POST',
                 body: formDataToSend,
             });
@@ -123,7 +123,7 @@ function Contactus() {
                             <h2 className="text-[#2AA11F] namdhinggo-extrabold lg:text-2xl text-xl">Email</h2>
                             <Link to="" >
                                 <p className="inter-medium text-base opacity-85 ">
-                                    ichciet.conference@gmail.com
+                                    info.ichciet@gmail.com
                                 </p>
                             </Link>
                         </div>
