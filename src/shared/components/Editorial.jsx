@@ -381,10 +381,10 @@ function Editorial() {
                             {editors.map((editor, index) => (
                                 <div key={index}>
                                     <div key={index} className="grid grid-cols-1 md:grid-cols-[30%_70%] md:gap-4    bg-white even:bg-gray-50">
-                                        <div className="font-semibold text-black md:border-r-1 p-3">
+                                        <div className="inter-semibold text-black md:border-r-1 p-3">
                                             Dr. {editor.name}
                                         </div>
-                                        <div className="text-gray-700 p-3">
+                                        <div className="text-gray-700 inter-regular p-3">
                                             {editor.department && <>{editor.department}, </>}
                                             {editor.university}, {editor.location}
                                         </div>
